@@ -7,6 +7,8 @@ O dono do canal é o MaAn. Fale sempre em português do Brasil, direto e curto, 
 
 ## Fluxo de cada execução agendada (2 shorts por dia)
 
+0. **Ver o que já está agendado**: rode getScheduledPosts no Metricool (blogId `8384272`, dia de hoje). Se 12:00 e/ou 19:00 já tiverem post, faça só os vídeos dos horários livres. Se os dois estiverem ocupados, avise o MaAn e pare.
+
 1. **Ler o desempenho** (só às segundas-feiras, ou se não houver `analise.md` desta semana): puxe pelo Windsor.ai (conector `youtube`, campos `video_title` e `views`, últimos 28 dias) e escreva em `analise.md` o que subiu e o que caiu. Use isso para escolher os temas.
 2. **Escrever 2 roteiros novos** seguindo as REGRAS DE ROTEIRO abaixo. Confira `historico.md` para não repetir tema.
 3. **Vozes automáticas (preferencial).** Se `ELEVENLABS_API_KEY` existir e `curl -s -o /dev/null -w "%{http_code}" https://api.elevenlabs.io/v1/models -H "xi-api-key: $ELEVENLABS_API_KEY"` devolver 200, escreva `falas.json` ({"chave": ["personagem", "[emoção] texto"]}, personagens: mae, lucas, pedro, pai, vo, tia, jorge) e rode `python3 /home/claude/-v-deos/motor/vozes_eleven.py falas.json` dentro da pasta do vídeo. Ele grava `vox/<chave>.wav` e `vox/dur.json`. Ouça mentalmente pela duração: se uma fala sair muito curta ou longa demais para o texto, gere só ela de novo uma vez. Pule o passo 4.
