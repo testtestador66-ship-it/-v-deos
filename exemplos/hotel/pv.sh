@@ -1,0 +1,1 @@
+cd /home/claude/hotel && bash build.sh && (pgrep -f "http.server 8796" >/dev/null || (python3 -m http.server 8796 >/dev/null 2>&1 &)) ; sleep 1; rm -rf prev; node render.js preview "$@" 2>&1 | grep -iE "err|warn"; bash grid.sh

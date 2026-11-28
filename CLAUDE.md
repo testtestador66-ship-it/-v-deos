@@ -33,6 +33,17 @@ Se algo falhar (render, push, Metricool), corrija e tente de novo uma vez. Se fa
 - 24 a 28 segundos. Pergunta nos últimos 2s em caixa escura ("Sua mãe também...? 👇").
 - Personagens: só os do motor (mãe, Lucas de camiseta vermelha, Pedro, tia, vó, pai, Seu Jorge), nas mesmas proporções dos exemplos. Iluminação simples do motor, sem bloom ou luzes coloridas.
 
+
+## Estilo visual (obrigatório, aprendido com os vídeos de 26 a 28/11, que fizeram só 40 a 70 mil)
+
+Os vídeos que só alternam rostos conversando em cenário vazio vão mal. O que viraliza ("Você não é todo mundo", 578 mil) tem:
+- **Corte que mostra a piada**: cada vez que a frase repetida aparece, corta por ~1s para uma cena que visualiza a frase (ex.: "todo mundo vai" vira todos os amigos na festa; "aqui não é hotel" vira o Lucas num hotel 5 estrelas). Mínimo 3 cortes desses por vídeo, cada um num cenário diferente.
+- **Cenários cheios e coloridos**: piso xadrez ou de madeira com tapete, azulejos coloridos, móveis, objetos, quadros, plantas. Nada de parede lisa sozinha.
+- **Planos abertos**: no máximo metade dos planos em close. Mostre o corpo, o cenário e a ação.
+- **Imagem clara**: sem vinheta escura nas bordas, exposição 1.3.
+- Ação física em todo plano (mexer em algo, andar, gesticular), não só boca mexendo.
+- Ver `motor/common.js` (personagens e helpers) e `exemplos/hotel/` (cortes de hotel, cozinha xadrez) como base.
+
 ## Controle de qualidade (obrigatório antes de publicar)
 
 - Rosto de quem fala sempre de frente ou em 3/4 (ângulo menor que 50°). Nunca de costas ou de lado.
