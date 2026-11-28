@@ -41,10 +41,7 @@ def ding(t,g=.25):
 def bed(t0,t1,notes,g=.05,step_=.25,w='sine'):
     t=t0; i=0
     while t<t1-.05: pluck(notes[i%len(notes)],t,g,.3,w,.5); t+=step_; i+=1
-def for k in ['c1','c2','c3']:
-    harp(T[k]+.02,.08); ding(T[k]+.05,.18)
-    for m in [72,76,79,84]: pluck(m,T[k]+.15,.05,.6,'sine',.6)
-finish():
+def finish():
     mix=out.copy()
     for name,info in json.load(open('vox/timing.json')).items():
         with wave.open(f"vox/{info.get('f',name)}.wav") as w: a=np.frombuffer(w.readframes(w.getnframes()),np.int16).astype(float)/32768
@@ -63,4 +60,7 @@ bed(T['p1'],T['m4']-.1,[55,58,62,58],.045,.3)
 harp(T['m4']-.1,.09)
 bed(T['m4']+.4,DUR,[60,64,67,72,65,69,72,77],.05)
 add(lpf(noise(.25),.6)*env(.25,.002,.06),T['p2']-.1,.15)  # record scratch-ish
+for k in ['c1','c2','c3']:
+    harp(T[k]+.02,.08); ding(T[k]+.05,.18)
+    for m in [72,76,79,84]: pluck(m,T[k]+.15,.05,.6,'sine',.6)
 finish()
